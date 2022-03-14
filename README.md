@@ -1,22 +1,18 @@
-# Docker Node MongoDB Example
-
-> Simple example of a dockerized Node/Mongo app
-
-![Image](https://i.ibb.co/4Fgt31L/demo.gif)
-
 ## Quick Start
 
 ```bash
-# Run in Docker
-docker-compose up
-# use -d flag to run in background
+# clone this repo
+git clone https://github.com/idokrn/docker-node-mongo.git && cd docker-node-mongo
 
-# Tear down
-docker-compose down
+# Build app depencencies
+helm dependency build dnm
 
-# To be able to edit files, add volume to compose file
-volumes: ['./:/usr/src/app']
+# Install the chart
+# Replace the <NAME> with relevant name.
+helm install <NAME> dnm
 
-# To re-build
-docker-compose build
+# Start a port forwarder.
+kubectl port-forward service/dnm-service 9000:80
 ```
+
+You can check that the app is working [Here](http://localhost:9000)
