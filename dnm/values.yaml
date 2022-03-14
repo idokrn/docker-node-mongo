@@ -2,7 +2,7 @@ dnm:
   name: dnm
   imageName: idokrn.jfrog.io/default-docker-local/dnm
   replicas: 3
-
+  registrykeySecretName: registrykey
 
 mongodb:
   service:

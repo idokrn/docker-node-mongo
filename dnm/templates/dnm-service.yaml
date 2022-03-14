@@ -4,7 +4,7 @@ metadata:
   name: dnm-service
 spec:
   selector:
-    app: {{ .Values.dnm.name }}
+    app: {{.Values.dnm.name}}
   ports:
     - port: 80
       targetPort: 3000
