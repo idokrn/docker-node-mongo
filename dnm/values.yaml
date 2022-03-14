@@ -1,0 +1,11 @@
+dnm:
+  name: dnm
+  imageName: idokrn.jfrog.io/default-docker-local/dnm
+  replicas: 3
+
+
+mongodb:
+  service:
+    clusterIP: 10.106.176.203
+  auth:
+    rootPassword: "ido123"

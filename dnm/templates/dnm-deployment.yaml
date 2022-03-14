@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dnm-deployment
+  labels:
+    app: {{ .Values.dnm.name }}
+spec:
+  replicas: {{ .Values.dnm.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.dnm.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.dnm.name }}
+    spec:
+      containers:
+        - name: {{ .Values.dnm.name }}
+          image: {{ .Values.dnm.imageName }}
+          ports:
+            - containerPort: 3000
